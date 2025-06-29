@@ -1,5 +1,5 @@
 def mask_account_card(input_str: str) -> str:
-    '''Функция для маскировки счёта или номера карты'''
+    """Функция для маскировки счёта или номера карты"""
 
     # разделяем строку и создаём отдельные спики
     parts = input_str.split()
@@ -13,8 +13,8 @@ def mask_account_card(input_str: str) -> str:
         else:
             text_parts.append(part)
 
-    number = ''.join(numbers)
-    text = ' '.join(text_parts)
+    number = "".join(numbers)
+    text = " ".join(text_parts)
 
     # маскируем счёт или номер карты
     if len(number) == 16:
