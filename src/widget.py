@@ -23,3 +23,10 @@ def mask_account_card(input_str: str) -> str:
     else:
         masked_account = f"{text} **{number[-4:]}"
         return masked_account
+
+
+def get_date(date_time: str) -> str:
+    """Преобразует дату"""
+
+    times = date_time[: date_time.find("T")].split("-")
+    return ".".join(times)
