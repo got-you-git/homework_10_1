@@ -1,9 +1,9 @@
 def get_mask_card_number(card_number: str) -> str:
     """Функция маскировки номера банковской карты"""
     # Удаляем все нецифровые символы
-    digits = ''.join(filter(str.isdigit, card_number))
+    digits = "".join(filter(str.isdigit, card_number))
 
-    # Проверяем минимальную длину (16 цифр для карты)
+    # Проверяем минимальную длину
     if len(digits) < 16:
         raise ValueError("Номер карты должен содержать минимум 16 цифр")
 
@@ -13,9 +13,9 @@ def get_mask_card_number(card_number: str) -> str:
 def get_mask_account(account: str) -> str:
     """Функция маскировки номера банковского счета"""
     # Удаляем все нецифровые символы
-    digits = ''.join(filter(str.isdigit, account))
+    digits = "".join(filter(str.isdigit, account))
 
-    # Проверяем минимальную длину (4 цифры для счета)
+    # Проверяем минимальную длину
     if len(digits) < 4:
         raise ValueError("Номер счета должен содержать минимум 4 цифры")
 
