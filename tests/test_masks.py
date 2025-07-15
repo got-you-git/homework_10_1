@@ -1,5 +1,6 @@
 import pytest
-from src.masks import get_mask_card_number, get_mask_account
+
+from src.masks import get_mask_account, get_mask_card_number
 
 
 @pytest.mark.parametrize(
@@ -19,8 +20,8 @@ def test_get_mask_card_number(card_number: str, expected: str) -> None:
     "card_number",
     [
         "123456789012345",  # 15 цифр
-        "1234 5678 901",   # 11 цифр
-        "",                # пустая строка
+        "1234 5678 901",  # 11 цифр
+        "",  # пустая строка
     ],
 )
 def test_get_mask_card_number_invalid(card_number: str) -> None:
@@ -46,8 +47,8 @@ def test_get_mask_account(account: str, expected: str) -> None:
     "account",
     [
         "123",  # 3 цифры
-        "12",   # 2 цифры
-        "",     # пустая строка
+        "12",  # 2 цифры
+        "",  # пустая строка
     ],
 )
 def test_get_mask_account_invalid(account: str) -> None:

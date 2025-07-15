@@ -1,6 +1,6 @@
 import pytest
 
-from src.widget import mask_account_card, get_date
+from src.widget import get_date, mask_account_card
 
 
 @pytest.mark.parametrize(
@@ -27,10 +27,8 @@ from src.widget import mask_account_card, get_date
         ("Карта 1234-5678-9012-3456", "Карта 1234 56** **** 3456"),  # Извлекает цифры
     ],
 )
-
 def test_mask_account_card(input_str: str, expected: str) -> None:
     assert mask_account_card(input_str) == expected
-
 
 
 @pytest.mark.parametrize(
@@ -56,9 +54,9 @@ def test_mask_account_card(input_str: str, expected: str) -> None:
         ("2023-10-05T12:30:45Textra", "05.10.2023"),  # Несколько T
     ],
 )
-
 def test_get_date(date_time: str, expected: str) -> None:
     assert get_date(date_time) == expected
+
 
 def test_get_date_no_date() -> None:
     assert get_date("NoDateHere") == "NoDateHere"
